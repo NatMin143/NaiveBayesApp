@@ -5,6 +5,8 @@ import Main from './assets/components/Main'
 
 function App() {
 
+  
+
   return (
     <>
       <div className='h-screen bg-[#FFFAF1] p-4'>
