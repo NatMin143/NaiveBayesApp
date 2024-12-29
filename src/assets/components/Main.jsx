@@ -54,6 +54,25 @@ export default function Main() {
         console.log("Random")
     }
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter' && textSentimentData.sentiment !== '') {
+            handleClick();
+        }
+    };
+
+    // Add keydown listener when the button is visible
+    useEffect(() => {
+        if (textSentimentData.sentiment !== '') {
+            window.addEventListener('keydown', handleKeyDown);
+        } else {
+            window.removeEventListener('keydown', handleKeyDown);
+        }
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [textSentimentData.sentiment]);
+
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
 
@@ -73,7 +92,11 @@ export default function Main() {
             sentiment: '',
         })
         generateRandomNumber(data)
-    }   
+    }
+
+    
+
+    
     
     
     return (
@@ -91,7 +114,9 @@ export default function Main() {
                 setInputDisable = {setinputDisable}
             />
             {textSentimentData.sentiment !== '' && (
-                <Button onClick = {handleClick} />
+                <Button
+                    onClick = {handleClick} 
+                />
             )}
             
 

@@ -71,6 +71,7 @@ export default function InputBox(props) {
           className="border px-7 focus:outline-none focus:border-none w-[919px] h-[86px] rounded-[20px] shadow-lg"
           autoComplete='off'
           disabled={props.inputDisable}
+          autoFocus
         />
         <button className="ml-[-60px]" type="submit">
           <img src={SubmitIcon} alt="Submit" className="w-[43px] h-[33px]" />
