@@ -29,3 +29,13 @@ npm install
 ##### Start the Development Server
 ```bash
 npm run dev
+
+-------------------------------------------------------
+Note: This is for running the backend server:
+
+1. Navigate to the folder /src/assets/naivebayes/
+2. Open the terminal on that folder and run the following command
+
+python naivebayes.py
+
+3. Open the link generated and keep it open from the browser so that the backend server can run and can be accessed from the frontend
