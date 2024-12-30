@@ -20,7 +20,7 @@ export default function Product(props) {
     return (
         <div>
             <div className='w-[250px] h-[325px] rounded-[15px] shadow-xl bg-white cursor-pointer'>
-                <img src={productData.images[0]} alt="A Product" className='w-[250px] h-[200px] rounded-tl-[15px] rounded-tr-[15px] object-cover'/>
+                <img src={productData.images[0]} alt="I am only using a dummy API so maybe some details/images are not present" className='w-[250px] h-[200px] rounded-tl-[15px] rounded-tr-[15px] object-cover'/>
                 <div className='p-2'>
                     <p className='font-semibold text-xs text-[#C8C8C8]'>{productData.category.name !== 'Change title' ? productData.category.name : 'No Category'}</p>
                     <h2 className={`${titleTextSize} font-bold`}>{productData.title}</h2>

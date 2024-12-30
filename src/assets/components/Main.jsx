@@ -1,7 +1,7 @@
 import InputBox from "./InputBox"
 import Product from "./Product"
 import Result from "./Result"
-import Button from "./button";
+import Button from "./Button";
 import { useState, useEffect } from 'react';
 import Loading from './Loading'
 
