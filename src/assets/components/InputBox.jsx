@@ -1,10 +1,12 @@
 import SubmitIcon from '/images/submit.svg';
 import { useState, useEffect } from 'react';
+import Loading from './Loading'
 
 export default function InputBox(props) {
   // console.log("Props",props)
 
   const [placeholder, setPlaceHolder] = useState("Write your review about this product")
+  const [loading, setLoading] = useState(false);
 
   // Update placeholder when inputDisable changes
   useEffect(() => {
@@ -20,6 +22,7 @@ export default function InputBox(props) {
     const formData = new FormData(event.target);
     const sentiment = { text: formData.get("sentiment") };
 
+    setLoading(true)
     if (!sentiment) {
       console.error('Sentiment is empty');
       return;
@@ -28,13 +31,15 @@ export default function InputBox(props) {
     console.log("The sentiment is", sentiment);
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/predict', {
+      const response = await fetch('https://nbayes.pythonanywhere.com/predict', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json', // Indicating that we are sending JSON data
         },
         body: JSON.stringify(sentiment),
       })
+
+      console.log("Fetch completed");
 
       if (!response.ok) {
         console.log("Error fetching Data from the server");
@@ -54,8 +59,16 @@ export default function InputBox(props) {
       console.error('Error fetching data:', error);
     } finally {
       event.target.reset();
+      console.log("Setting loading to false");
+      setLoading(false)
     }
   }
+
+  if (loading) {
+    console.log("Loadinggg")
+    return <Loading />
+  };
+  
 
   
   

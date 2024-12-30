@@ -3,9 +3,10 @@ import Product from "./Product"
 import Result from "./Result"
 import Button from "./button";
 import { useState, useEffect } from 'react';
+import Loading from './Loading'
 
+export default function Main({setSentimentDatas}) {
 
-export default function Main() {
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -15,13 +16,12 @@ export default function Main() {
     })
 
     const [productToShow, setProductToShow] = useState(0);
-    const [isButtonClicked, setIsButtonClicked] = useState(false);
     const [inputDisable, setinputDisable] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://api.escuelajs.co/api/v1/products?offset=0&limit=30');
+                const response = await fetch('https://api.escuelajs.co/api/v1/products?offset=0&limit=20');
 
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -31,6 +31,8 @@ export default function Main() {
                 setData(data)
 
                 generateRandomNumber(data)
+
+                console.log("Fetching data happens")
 
             } catch (error) {
                 setError(error)
@@ -43,7 +45,7 @@ export default function Main() {
         fetchData();
     }, [])
 
-    // console.log(data)
+    console.log(data)
 
     const generateRandomNumber = (data) => {
         if (data && data.length > 0) {
@@ -73,7 +75,19 @@ export default function Main() {
         };
     }, [textSentimentData.sentiment]);
 
-    if (loading) return <div>Loading...</div>;
+    useEffect(() => {
+        if (textSentimentData.sentiment !== '') {
+            setSentimentDatas((prevData) => {
+                // If the length of prevData is 10 or more, remove the first element
+                const updatedData = prevData.length >= 10 ? prevData.slice(1) : prevData;
+                return [textSentimentData, ...updatedData];
+            });
+        }
+    }, [textSentimentData]);
+
+    // console.log("Sentiment Data", sentimentDatas)
+
+    if (loading) return <Loading />;
     if (error) return <div>Error: {error}</div>;
 
 
@@ -94,31 +108,31 @@ export default function Main() {
         generateRandomNumber(data)
     }
 
-    
 
-    
-    
-    
+
+
+
+
     return (
         <main className="flex mt-10 gap-10 items-center justify-center relative">
             {data !== null && productElements[productToShow]}
-            {textSentimentData.sentiment !==  '' && (
+            {textSentimentData.sentiment !== '' && (
                 <Result
-                text={textSentimentData.text}
-                sentiment={textSentimentData.sentiment}
-            />
-            )}   
+                    text={textSentimentData.text}
+                    sentiment={textSentimentData.sentiment}
+                />
+            )}
             <InputBox
                 setTextSentimentData={setTextSentimentData}
-                inputDisable = {inputDisable}
-                setInputDisable = {setinputDisable}
+                inputDisable={inputDisable}
+                setInputDisable={setinputDisable}
             />
             {textSentimentData.sentiment !== '' && (
                 <Button
-                    onClick = {handleClick} 
+                    onClick={handleClick}
                 />
             )}
-            
+
 
         </main>
     )
