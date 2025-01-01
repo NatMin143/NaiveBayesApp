@@ -10,6 +10,9 @@ export default function LandingPage() {
     }
     return (
         <div className=' flex flex-col justify-center items-center pt-6'>
+            <div className='absolute top-0 left-0 w-11 h-screen bg-[#FFC663]'>
+            </div>
+
             <div className='flex justify-center items-center flex-col gap-2 mb-2'>
                 <img src={naiveBayesLogo} alt="Naive Bayes Logo" className='w-[180px] h-[180px] object-cover' />
                 <h1 className='font-extrabold text-4xl'>NAIVE BAYES</h1>
