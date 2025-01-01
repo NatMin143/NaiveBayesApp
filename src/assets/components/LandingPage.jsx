@@ -72,6 +72,10 @@ export default function LandingPage() {
                     </Link>
                 </div>
             </div>
+
+            <footer className='mt-6'>
+                <p className='text-gray-600 font-medium'>Note: The results may not be correct due to the limited datasets</p>
+            </footer>
         </div>
     )
 }
