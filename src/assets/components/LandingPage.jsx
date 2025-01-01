@@ -4,6 +4,10 @@ import linkLogo from '/images/link.svg'
 import arrowLogo from '/images/arrow.svg'
 
 export default function LandingPage() {
+
+    function goToLink(link) {
+        window.location.href = link
+    }
     return (
         <div className=' flex flex-col justify-center items-center pt-6'>
             <div className='flex justify-center items-center flex-col gap-2 mb-2'>
@@ -19,7 +23,7 @@ export default function LandingPage() {
 
                 <div className='flex bg-white w-[386px] h-[68px] justify-between rounded-lg shadow-md'>
                     <div className='flex justify-center items-center w-[314px]'>
-                        <a href="" className='font-medium text-base text-[#707070]'>Research Overview Video</a>
+                        <p className='font-medium text-base text-[#707070]'>Research Overview Video</p>
                     </div>
                     <div className='flex justify-center items-center bg-[#FFC663] w-[72px] h-full p-4  rounded-tr-lg rounded-br-lg hover:bg-yellow-600 cursor-pointer'>
                         <img src={linkLogo} alt="linkLogo" />
@@ -28,7 +32,7 @@ export default function LandingPage() {
 
                 <div className='flex bg-white w-[386px] h-[68px] justify-between rounded-lg shadow-md'>
                     <div className='flex justify-center items-center w-[314px]'>
-                        <a href="" className='font-medium text-base text-[#707070]'>Research Paper</a>
+                        <p className='font-medium text-base text-[#707070]'>Research Paper</p>
                     </div>
                     <div className='flex justify-center items-center bg-[#FFC663] w-[72px] h-full p-4  rounded-tr-lg rounded-br-lg hover:bg-yellow-600 cursor-pointer'>
                         <img src={linkLogo} alt="linkLogo" />
@@ -37,18 +41,18 @@ export default function LandingPage() {
 
                 <div className='flex bg-white w-[386px] h-[68px] justify-between rounded-lg shadow-md'>
                     <div className='flex justify-center items-center w-[314px]'>
-                        <a href="" className='font-medium text-base text-[#707070]'>Github Front-End</a>
+                        <p className='font-medium text-base text-[#707070]'>Github Front-End</p>
                     </div>
-                    <div className='flex justify-center items-center bg-[#FFC663] w-[72px] h-full p-4  rounded-tr-lg rounded-br-lg hover:bg-yellow-600 cursor-pointer'>
+                    <div className='flex justify-center items-center bg-[#FFC663] w-[72px] h-full p-4  rounded-tr-lg rounded-br-lg hover:bg-yellow-600 cursor-pointer' onClick={() => goToLink("https://github.com/NatMin143/NaiveBayesApp.git")}>
                         <img src={linkLogo} alt="linkLogo" />
                     </div>
                 </div>
 
                 <div className='flex bg-white w-[386px] h-[68px] justify-between rounded-lg shadow-md'>
                     <div className='flex justify-center items-center w-[314px]'>
-                    <a href="" className='font-medium text-base text-[#707070]'>Github Back-End</a>
+                    <p className='font-medium text-base text-[#707070]'>Github Back-End</p>
                     </div>
-                    <div className='flex justify-center items-center bg-[#FFC663] w-[72px] h-full p-4  rounded-tr-lg rounded-br-lg hover:bg-yellow-600 cursor-pointer'>
+                    <div className='flex justify-center items-center bg-[#FFC663] w-[72px] h-full p-4  rounded-tr-lg rounded-br-lg hover:bg-yellow-600 cursor-pointer' onClick={() => goToLink("https://github.com/NatMin143/naivebayesbackend.git")}>
                         <img src={linkLogo} alt="linkLogo" />
                     </div>
                 </div>

@@ -1,4 +1,3 @@
-import SampleImage from '/images/sample.jpg'
 import { useState, useEffect } from 'react';
 
 export default function Product(props) {
