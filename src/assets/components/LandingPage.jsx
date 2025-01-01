@@ -66,7 +66,7 @@ export default function LandingPage() {
                     </div>
 
                     <Link to='/home'>
-                    <div className='flex justify-center items-center bg-[#FFC663] w-[72px] h-full p-4  rounded-tr-lg rounded-br-lg cursor-pointer hover:bg-yellow-600 cursor-pointer'>
+                    <div className='flex justify-center items-center bg-[#FFC663] w-[72px] h-full p-4  rounded-tr-lg rounded-br-lg cursor-pointer hover:bg-yellow-600'>
                         <img src={arrowLogo} alt="linkLogo" />
                     </div>
                     </Link>
