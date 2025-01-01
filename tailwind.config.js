@@ -5,6 +5,9 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },
+      fontSize: {
+        'custom-size': '48px',
+      },
     },
   },
   plugins: [],

@@ -8,7 +8,7 @@ export default function Header() {
     return (
 
         <header className='flex justify-between items-center px-4'>
-            <Link to='/'>
+            <Link to='/home'>
                 <div className='flex justify-center items-center'>
                     <img className='w-20 h-20 mt-2 cursor-pointer' src={naiveBayesLogo} alt="Naive Bayes Logo" />
                     <h1 className='text-base font-extrabold cursor-pointer'>Naive Bayes</h1>
