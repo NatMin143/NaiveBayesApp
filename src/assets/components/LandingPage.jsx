@@ -6,7 +6,7 @@ import arrowLogo from '/images/arrow.svg'
 export default function LandingPage() {
 
     function goToLink(link) {
-        window.location.href = link
+        window.open(link, '_blank');
     }
     return (
         <div className=' flex flex-col justify-center items-center pt-6'>
