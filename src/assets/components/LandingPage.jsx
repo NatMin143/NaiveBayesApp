@@ -37,7 +37,7 @@ export default function LandingPage() {
                     <div className='flex justify-center items-center w-[314px]'>
                         <p className='font-medium text-base text-[#707070]'>Research Paper</p>
                     </div>
-                    <div className='flex justify-center items-center bg-[#FFC663] w-[72px] h-full p-4  rounded-tr-lg rounded-br-lg hover:bg-yellow-600 cursor-pointer'>
+                    <div className='flex justify-center items-center bg-[#FFC663] w-[72px] h-full p-4  rounded-tr-lg rounded-br-lg hover:bg-yellow-600 cursor-pointer' onClick={() => goToLink('https://drive.google.com/file/d/14JnWAkrm2Hf99lgP2pEImouG4KwQ8ehR/view?usp=sharing')}>
                         <img src={linkLogo} alt="linkLogo" />
                     </div>
                 </div>
