@@ -44,7 +44,7 @@ export default function LandingPage() {
 
                 <div className='flex bg-white w-[386px] h-[68px] justify-between rounded-lg shadow-md'>
                     <div className='flex justify-center items-center w-[314px]'>
-                        <p className='font-medium text-base text-[#707070]'>Github Front-End</p>
+                        <p className='font-medium text-base text-[#707070]'>GitHub Front End</p>
                     </div>
                     <div className='flex justify-center items-center bg-[#FFC663] w-[72px] h-full p-4  rounded-tr-lg rounded-br-lg hover:bg-yellow-600 cursor-pointer' onClick={() => goToLink("https://github.com/NatMin143/NaiveBayesApp.git")}>
                         <img src={linkLogo} alt="linkLogo" />
@@ -53,7 +53,7 @@ export default function LandingPage() {
 
                 <div className='flex bg-white w-[386px] h-[68px] justify-between rounded-lg shadow-md'>
                     <div className='flex justify-center items-center w-[314px]'>
-                    <p className='font-medium text-base text-[#707070]'>Github Back-End</p>
+                    <p className='font-medium text-base text-[#707070]'>GitHub Back End</p>
                     </div>
                     <div className='flex justify-center items-center bg-[#FFC663] w-[72px] h-full p-4  rounded-tr-lg rounded-br-lg hover:bg-yellow-600 cursor-pointer' onClick={() => goToLink("https://github.com/NatMin143/naivebayesbackend.git")}>
                         <img src={linkLogo} alt="linkLogo" />
