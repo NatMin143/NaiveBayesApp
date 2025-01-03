@@ -28,7 +28,7 @@ export default function LandingPage() {
                     <div className='flex justify-center items-center w-[314px]'>
                         <p className='font-medium text-base text-[#707070]'>Research Overview Video</p>
                     </div>
-                    <div className='flex justify-center items-center bg-[#FFC663] w-[72px] h-full p-4  rounded-tr-lg rounded-br-lg hover:bg-yellow-600 cursor-pointer'>
+                    <div className='flex justify-center items-center bg-[#FFC663] w-[72px] h-full p-4  rounded-tr-lg rounded-br-lg hover:bg-yellow-600 cursor-pointer' onClick={() => goToLink('https://youtu.be/_Fj4FxNQuuw')}>
                         <img src={linkLogo} alt="linkLogo" />
                     </div>
                 </div>
