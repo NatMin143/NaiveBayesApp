@@ -31,11 +31,6 @@ npm install
 npm run dev
 
 -------------------------------------------------------
-Note: This is for running the backend server:
+Note: The backend server is on another repository, you can find it here: https://github.com/NatMin143/naivebayesbackend.git
 
-1. Navigate to the folder /src/assets/naivebayes/
-2. Open the terminal on that folder and run the following command
-
-python naivebayes.py
-
-3. Open the link generated and keep it open from the browser so that the backend server can run and can be accessed from the frontend
+The backend server is use to analyze the text and return the result  / sentiment to the frontend.
